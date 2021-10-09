@@ -14,6 +14,7 @@ public class Mouvement : MonoBehaviour
     private PlayerInput playerInput;
     public int playerIndex = 0;
 
+    public Animator animator;
     bool isGrounded = false;
     bool isMoving = false;
     
@@ -42,7 +43,8 @@ public class Mouvement : MonoBehaviour
     {
         Vector2 m = new Vector2(move.x, 0);
         transform.Translate(m);
-        isMoving = (move == new Vector2(0, 0));
+        isMoving = !(move == new Vector2(0, 0));
+        animator.SetBool("MarcheActuellement", isMoving);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
