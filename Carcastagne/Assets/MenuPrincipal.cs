@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void LancerLeJeu()
     {
-        
+        SceneManager.LoadScene("SceneVictor");
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void QuitGame()
+    /* Permet de fermer l'application. Est appeler par le bouton "Quitter" du Menu Principal */
     {
-        
+        Debug.Log("Quitter !");
+        Application.Quit();
     }
 }
