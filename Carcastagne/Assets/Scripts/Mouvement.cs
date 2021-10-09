@@ -14,6 +14,8 @@ public class Mouvement : MonoBehaviour
     private PlayerInput playerInput;
     public int playerIndex = 0;
 
+    bool isGrounded = false;
+    
     private void Awake()
     {
         control = new PlayerControls();
@@ -24,7 +26,10 @@ public class Mouvement : MonoBehaviour
 
     void Jump(InputAction.CallbackContext ctx)
     {
+        if (isGrounded)
+        {
             rb.velocity = new Vector2(0, 1) * hauteurSaut;
+        }
     }
 
     void Move(InputAction.CallbackContext ctx)
@@ -32,10 +37,27 @@ public class Mouvement : MonoBehaviour
         move = ctx.ReadValue<Vector2>() * Time.deltaTime * vitesse;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 m = new Vector2(move.x, 0);
         transform.Translate(m);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
+
     }
 
 

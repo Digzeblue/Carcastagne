@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hauteurSaut: 10
   vitesse: 10
+  playerIndex: 0
 --- !u!50 &6086938616905419997
 Rigidbody2D:
   serializedVersion: 4
