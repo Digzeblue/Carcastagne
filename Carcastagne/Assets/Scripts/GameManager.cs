@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*
         if (cam.position.x > posCam1.position.x)
         {
             cam.Translate(Vector2.left * speedCam * Time.deltaTime);
@@ -33,7 +33,16 @@ public class GameManager : MonoBehaviour
         {
             cam.Translate(Vector2.right * speedCam * Time.deltaTime);
         }
+        */
+    }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "Cochon" && cam.position.x > posCam1.position.x)
+        {
+            cam.Translate(Vector2.left * speedCam * Time.deltaTime);
+        }
     }
 
 

@@ -7,31 +7,37 @@ public class Mouvement : MonoBehaviour
 {
     public float hauteurSaut = 5;
     public float vitesse = 10;
-    private bool IsGrounded;
     PlayerControls control;
     Rigidbody2D rb;
     Vector2 move;
+
+    private PlayerInput playerInput;
+    public int playerIndex = 0;
 
     private void Awake()
     {
         control = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
-
-        control.Gameplay.Jump.performed += ctx => Jump();
-        control.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        control.Gameplay.Move.canceled += ctx => move = Vector2.zero;
+        playerInput = GetComponent<PlayerInput>();
+        var index = playerInput.playerIndex;
     }
 
-    void Jump()
+    void Jump(InputAction.CallbackContext ctx)
     {
             rb.velocity = new Vector2(0, 1) * hauteurSaut;
     }
 
+    void Move(InputAction.CallbackContext ctx)
+    {
+        move = ctx.ReadValue<Vector2>() * Time.deltaTime * vitesse;
+    }
+
     private void Update()
     {
-        Vector2 m = new Vector2(move.x, 0)*vitesse*Time.deltaTime;
-        transform.Translate(m, Space.World);
+        Vector2 m = new Vector2(move.x, 0);
+        transform.Translate(m);
     }
+
 
     private void OnEnable()
     {
@@ -41,14 +47,5 @@ public class Mouvement : MonoBehaviour
     private void OnDisable()
     {
         control.Gameplay.Disable();
-    }
-    void OnCollisionStay(Collision collision)
-    {
-            IsGrounded = true;
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-            IsGrounded = false;
     }
 }
