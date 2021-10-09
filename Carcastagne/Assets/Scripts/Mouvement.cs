@@ -15,6 +15,7 @@ public class Mouvement : MonoBehaviour
     public int playerIndex = 0;
 
     bool isGrounded = false;
+    bool isMoving = false;
     
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class Mouvement : MonoBehaviour
     {
         Vector2 m = new Vector2(move.x, 0);
         transform.Translate(m);
+        isMoving = (move == new Vector2(0, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
