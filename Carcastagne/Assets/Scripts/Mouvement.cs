@@ -9,14 +9,14 @@ public class Mouvement : MonoBehaviour
     public float vitesse = 10;
     PlayerControls control;
     Rigidbody2D rb;
-    Vector2 move;
+    public Vector2 move;
 
     private PlayerInput playerInput;
     public int playerIndex = 0;
 
     public Animator animator;
-    bool isGrounded = false;
-    bool isMoving = false;
+    public bool isGrounded = false;
+    public bool isMoving = false;
     
     private void Awake()
     {
