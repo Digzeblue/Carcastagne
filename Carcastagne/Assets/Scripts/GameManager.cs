@@ -24,12 +24,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.LeftArrow) && cam.position.x > posCam1.position.x)
+        if (cam.position.x > posCam1.position.x)
         {
             cam.Translate(Vector2.left * speedCam * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) && cam.position.x < posCam2.position.x)
+        if (cam.position.x < posCam2.position.x)
         {
             cam.Translate(Vector2.right * speedCam * Time.deltaTime);
         }
