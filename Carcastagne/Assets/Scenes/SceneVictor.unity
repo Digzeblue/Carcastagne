@@ -238,6 +238,7 @@ MonoBehaviour:
   posCam0: {fileID: 811728819}
   posCam1: {fileID: 1911491830}
   posCam2: {fileID: 578003770}
+  speedCam: 0
 --- !u!4 &347885919
 Transform:
   m_ObjectHideFlags: 0
