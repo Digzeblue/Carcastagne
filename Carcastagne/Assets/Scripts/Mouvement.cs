@@ -44,11 +44,14 @@ public class Mouvement : MonoBehaviour
     {
         Vector2 m = new Vector2(move.x, 0);
         transform.Translate(m);
-
-        isMoving = !(move == new Vector2(0, 0));
-        animator.SetBool("MarcheActuellement", isMoving);
-        isLookingLeft = (move.x < 0);
-        animator.SetBool("RegardeVersVictoire", isLookingLeft);
+        if (animator != null)
+        {
+            isMoving = !(move == new Vector2(0, 0));
+            animator.SetBool("MarcheActuellement", isMoving);
+            isLookingLeft = (move.x < 0);
+            animator.SetBool("RegardeVersVictoire", isLookingLeft);
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
