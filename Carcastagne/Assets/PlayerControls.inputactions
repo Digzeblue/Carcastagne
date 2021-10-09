@@ -6,55 +6,112 @@
             "id": "df936a38-ad41-4ddd-b2dd-e143c0e82806",
             "actions": [
                 {
-                    "name": "Move right",
+                    "name": "Move",
+                    "type": "Value",
                     "id": "a3506571-5ee6-4387-b21e-6d17b82cda65",
-                    "expectedControlLayout": "",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "bindings": []
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "Move left",
-                    "id": "3f82589d-cc40-4385-9e2f-62d0bbf0654f",
-                    "expectedControlLayout": "",
-                    "continuous": false,
-                    "passThrough": false,
-                    "initialStateCheck": false,
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "85c8b673-e57b-45c7-83ef-dfe95ffe2b4a",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "bindings": []
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Charge",
+                    "type": "Button",
+                    "id": "3409f096-0a78-42e1-8fb1-1e8bc7c1cda8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "c46d4704-bff2-4aac-9804-66ad3c5e8e72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "ad718ad2-870d-4008-8fd7-6b5128fd26e8",
-                    "path": "<Gamepad>/leftStick/right",
+                    "id": "3694b514-678f-46a3-80ea-58dfbed8074c",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Move right",
+                    "groups": "Manette 2;Manette 1",
+                    "action": "Jump",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6629f6db-ba87-4d01-aff3-54a21d498b23",
-                    "path": "<Gamepad>/dpad/left",
+                    "id": "18cb6dd9-dd38-4c2f-9626-6f6173ac1848",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Move left",
+                    "groups": "Manette 2",
+                    "action": "Charge",
                     "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5783d69f-0de6-4702-8cd6-271b0fa07fc1",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette 1",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "74f9a491-3449-4cba-9b42-68d5997114c2",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Manette 1;Manette 2",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Manette 1",
+            "bindingGroup": "Manette 1",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Manette 2",
+            "bindingGroup": "Manette 2",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
