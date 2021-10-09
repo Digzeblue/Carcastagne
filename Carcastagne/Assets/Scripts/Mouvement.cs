@@ -7,6 +7,7 @@ public class Mouvement : MonoBehaviour
 {
     public float hauteurSaut = 5;
     public float vitesse = 10;
+    private bool IsGrounded;
     PlayerControls control;
     Rigidbody2D rb;
     Vector2 move;
@@ -23,7 +24,7 @@ public class Mouvement : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = new Vector2(0,1) * hauteurSaut;
+            rb.velocity = new Vector2(0, 1) * hauteurSaut;
     }
 
     private void Update()
@@ -40,5 +41,14 @@ public class Mouvement : MonoBehaviour
     private void OnDisable()
     {
         control.Gameplay.Disable();
+    }
+    void OnCollisionStay(Collision collision)
+    {
+            IsGrounded = true;
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+            IsGrounded = false;
     }
 }
