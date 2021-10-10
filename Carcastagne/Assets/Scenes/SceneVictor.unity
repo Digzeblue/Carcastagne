@@ -189,6 +189,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a144705c37a2a734eb7e5829e4bfdc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &28075353
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28075350}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.059967995, y: 0.019989014}
+  m_Size: {x: 1.8902397, y: 4.159978}
+  m_Direction: 0
 --- !u!114 &28075356 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6086938616905419995, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
@@ -233,6 +249,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dureeStun: 2
   animator: {fileID: 28075357}
+--- !u!1 &74464658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74464659}
+  m_Layer: 0
+  m_Name: HoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74464659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74464658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.74, y: 2.61, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1782476585}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &77009008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,11 +2248,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liftDuree: 3
-  throwForce: 10
-  holdPoint: {fileID: 1783753223}
+  throwForce: 8
+  holdPoint: {fileID: 74464659}
   isGrabed: 0
   isThrowed: 0
   carcasControl: {fileID: 28075356}
+--- !u!70 &1733366819
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733366808}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000011920929}
+  m_Size: {x: 1.7, y: 1.7}
+  m_Direction: 0
 --- !u!1001 &1782476584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2232,11 +2294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1297485569455396181, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 3.41
+      value: 2.33
       objectReference: {fileID: 0}
     - target: {fileID: 1297485569455396181, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4.29
+      value: 4.12
       objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419994, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_Name
@@ -2362,43 +2424,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1297485569455396181, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
 --- !u!4 &1782476585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6086938616905419999, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
   m_PrefabInstance: {fileID: 1782476584}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1783753222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1783753223}
-  m_Layer: 0
-  m_Name: HoldPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1783753223
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783753222}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.79, y: 2.03, z: -206.2768}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1782476585}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1842229754
 GameObject:
   m_ObjectHideFlags: 0

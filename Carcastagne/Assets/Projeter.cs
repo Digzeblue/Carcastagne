@@ -55,14 +55,14 @@ public class Projeter : MonoBehaviour
     void Souleve()
     {
         pigControl.actualDirection = carcasControl.actualDirection;
-        pigRB.transform.position += holdPoint.position;
+        pigRB.transform.position = holdPoint.position;
         pigRB.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     void Projete()
     {
         pigRB.constraints = RigidbodyConstraints2D.FreezeRotation;
-        pigRB.velocity = new Vector2(pigControl.actualDirection, 0.6f) * throwForce;
+        pigRB.velocity = new Vector2(1, 1) * throwForce;
     }
 
     IEnumerator waiter()
