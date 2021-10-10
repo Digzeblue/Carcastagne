@@ -158,6 +158,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6086938616905419994, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
   m_PrefabInstance: {fileID: 1782476584}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &28075351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28075350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f97f2e8335ee4b4b82ea1f8b5f58151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 28075357}
+  attackPoint: {fileID: 1091742641}
+  rangeAttaque: 0.79
+  cochonCalque:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!95 &28075357
 Animator:
   serializedVersion: 3
@@ -1169,6 +1187,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1091742640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091742641}
+  m_Layer: 0
+  m_Name: ZoneChope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091742641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091742640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.74, y: -0.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1782476585}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373868794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1703,10 @@ PrefabInstance:
       value: Cochon
       objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419994, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6086938616905419994, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_TagString
       value: Cochon
       objectReference: {fileID: 0}
@@ -1922,6 +1974,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DameCarcas
       objectReference: {fileID: 0}
+    - target: {fileID: 6086938616905419994, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419995, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: vitesse
       value: 14
@@ -2001,6 +2057,34 @@ PrefabInstance:
     - target: {fileID: 6086938616905419999, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 28075351}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FaireUneChope
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Chope, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
