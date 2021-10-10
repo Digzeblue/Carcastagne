@@ -2452,6 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75bd3108673b4d0408c4eaf7dc03e802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1733366809}
   dashSpeed: 10
   startDashTime: 0.2
   cooldown: 1

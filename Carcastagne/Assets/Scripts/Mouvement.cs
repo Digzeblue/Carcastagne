@@ -17,7 +17,6 @@ public class Mouvement : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoving = false;
     public bool isLookingLeft = false;
-    private bool changeDirection = false;
     public int actualDirection = 1;
     
     private void Awake()
@@ -51,11 +50,7 @@ public class Mouvement : MonoBehaviour
     {
         if(move.x * actualDirection < 0)
         {
-            changeDirection = true;
             actualDirection *= -1;
-        } else
-        {
-            changeDirection = false;
         }
         if (animator != null)
         {
@@ -86,11 +81,11 @@ public class Mouvement : MonoBehaviour
 
     public void OnEnable()
     {
-        //playerInput.enabled(true);
+        playerInput.enabled = true;
     }
 
     public void OnDisable()
     {
-
+        playerInput.enabled = false;
     }
 }
