@@ -39,6 +39,8 @@ public class Stun : MonoBehaviour
     public void Stunned(Rigidbody2D rb)
     {
         mouvement.OnDisable();
+        //rb.constraints.
+
         isStunned = true;
         Debug.Log("Touché !");
         //Début Animation Stun
