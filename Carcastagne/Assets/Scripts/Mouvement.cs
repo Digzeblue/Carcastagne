@@ -9,14 +9,15 @@ public class Mouvement : MonoBehaviour
     public float vitesse = 10;
     PlayerControls control;
     Rigidbody2D rb;
-    Vector2 move;
+    public Vector2 move;
 
     private PlayerInput playerInput;
     public int playerIndex = 0;
 
     public Animator animator;
-    bool isGrounded = false;
-    bool isMoving = false;
+    public bool isGrounded = false;
+    public bool isMoving = false;
+    public bool isLookingLeft = false;
     
     private void Awake()
     {
@@ -43,8 +44,14 @@ public class Mouvement : MonoBehaviour
     {
         Vector2 m = new Vector2(move.x, 0);
         transform.Translate(m);
-        isMoving = !(move == new Vector2(0, 0));
-        animator.SetBool("MarcheActuellement", isMoving);
+        if(animator != null)
+        {
+            isMoving = !(move == new Vector2(0, 0));
+            animator.SetBool("MarcheActuellement", isMoving);
+            isLookingLeft = (move.x < 0);
+            animator.SetBool("RegardeVersVictoire", isLookingLeft);
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
