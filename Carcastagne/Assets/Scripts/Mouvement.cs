@@ -18,7 +18,7 @@ public class Mouvement : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoving = false;
     public bool isLookingLeft = false;
-    public bool changeDirection = false;
+    private bool changeDirection = false;
     public int actualDirection = 1;
     
     private void Awake()
