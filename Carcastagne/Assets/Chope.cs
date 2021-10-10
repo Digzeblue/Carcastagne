@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Chope : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator animator;
+
+    public Transform attackPoint;
+
+    public float rangeAttaque = 0.5f;
+
+    public LayerMask cochonCalque;
+    
+    public void FaireUneChope()
     {
+        //Joue l'animation de chope
+        animator.SetTrigger("Chope");
+
+        //Detectes le cochon dans la range
+        Collider2D[] EnnemiAttrapé = Physics2D.OverlapCircleAll(attackPoint.position, rangeAttaque, cochonCalque);
+
+
         
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDrawGizmosSelected()
     {
-        
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, rangeAttaque);
     }
 }
