@@ -5,21 +5,27 @@ using UnityEngine;
 public class Trigger1 : MonoBehaviour
 {
     public Transform cam;
+    public Transform queen;
 
+    public Transform targetLocationCam;
+    public Transform targetLocationPig;
+    public Transform targetLocationQueen;
    
 
-    float speedCam = 50f;
+    
 
     void Start()
     {
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D Player)
     {
-        if(collision.gameObject.tag == "Cochon")
+        if(Player.gameObject.tag == "Cochon")
         {
-            cam.Translate(Vector2.right * speedCam);
+            Player.gameObject.transform.position = targetLocationPig.position;
+            cam.gameObject.transform.position = targetLocationCam.position;
+            queen.gameObject.transform.position = targetLocationQueen.position;
         }
     }
 
