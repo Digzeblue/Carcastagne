@@ -14,7 +14,7 @@ public class Charger : MonoBehaviour
     public float cooldown;
     private float nextDash;
 
-    private bool isCharging;
+    private bool isCharging = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +33,7 @@ public class Charger : MonoBehaviour
                 direction = 0;
                 dashTime = startDashTime;
                 rb.velocity = Vector2.zero;
+                isCharging = false;
             } else
             {
                 dashTime -= Time.deltaTime;
@@ -47,11 +48,19 @@ public class Charger : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Carcasse" && isCharging)
+        {
+            collision.gameObject.GetComponent<Stun>().Stunned(collision.gameObject.GetComponent<Rigidbody2D>());
+        }
+    }
 
     public void Charge()
     {
         if (direction == 0 && Time.time > nextDash)
         {
+            isCharging = true;
             direction = mouvement.actualDirection;
             nextDash = Time.time + cooldown;
             //Animation charge

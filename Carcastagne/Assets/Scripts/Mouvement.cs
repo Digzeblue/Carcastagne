@@ -86,12 +86,12 @@ public class Mouvement : MonoBehaviour
     }
 
 
-    private void OnEnable()
+    public void OnEnable()
     {
         control.Gameplay.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         control.Gameplay.Disable();
     }
