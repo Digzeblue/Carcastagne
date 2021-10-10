@@ -176,6 +176,7 @@ MonoBehaviour:
   cochonCalque:
     serializedVersion: 2
     m_Bits: 128
+  cooldown: 0
 --- !u!114 &28075352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2202,7 +2203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liftDuree: 3
   throwForce: 10
-  holdPoint: {fileID: 1628741053}
   isGrabed: 0
   isThrowed: 0
   carcasControl: {fileID: 28075356}
@@ -2291,11 +2291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419999, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.43
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419999, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.26
+      value: -3.11
       objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419999, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_LocalPosition.z
