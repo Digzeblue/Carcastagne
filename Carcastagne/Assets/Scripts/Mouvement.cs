@@ -86,7 +86,7 @@ public class Mouvement : MonoBehaviour
 
     public void OnEnable()
     {
-        playerInput.enabled(true);
+        //playerInput.enabled(true);
     }
 
     public void OnDisable()
