@@ -11,9 +11,12 @@ public class TriggerWin : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        victoire.gameObject.SetActive(true);
-        boutonMenu.gameObject.SetActive(true);
-        //victoireQueen.SetActive(true);
+        if(collision.gameObject.tag == "Cochon")
+        {
+            victoire.gameObject.SetActive(true);
+            boutonMenu.gameObject.SetActive(true);
+            //victoireQueen.SetActive(true);
+        }
     } 
     
     public void RetourMenu()
