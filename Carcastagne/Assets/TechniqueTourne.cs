@@ -5,6 +5,7 @@ using UnityEngine;
 public class TechniqueTourne : MonoBehaviour
 {
     int newscale;
+    int direction;
     
     // Start is called before the first frame update
 
@@ -12,19 +13,35 @@ public class TechniqueTourne : MonoBehaviour
     void Start()
     {
         Vector3 local = transform.localScale;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<Mouvement>().isLookingLeft)
+        if(gameObject.tag == "Cochon")
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            direction = -GetComponent<Mouvement>().actualDirection;
+            if (GetComponent<Mouvement>().isLookingLeft)
+            {
+                transform.localScale = new Vector3(direction, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(direction, 1, 1);
+            }
         }
-        else
+        if (gameObject.tag == "Carcasse")
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            direction = GetComponent<Mouvement>().actualDirection;
+            if (GetComponent<Mouvement>().isLookingLeft)
+            {
+                transform.localScale = new Vector3(0.5f*direction, 0.5f, 0.5f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(0.5f*direction, 0.5f, 0.5f);
+            }
         }
+        
     }
 }
