@@ -8,6 +8,7 @@ public class Stun : MonoBehaviour
     public float dureeStun;
     private bool isStunned = false;
 
+    public Animator animator;
     private Mouvement mouvement;
     private Rigidbody2D rb;
 
@@ -29,8 +30,7 @@ public class Stun : MonoBehaviour
                 mouvement.OnEnable();
                 stunTime = dureeStun;
                 isStunned = false;
-                Debug.Log("Fin du stun");
-                //fin animation stun
+                animator.SetBool("TombeDuSol", false);
             } else
             {
                 rb.velocity = Vector3.zero;
@@ -43,7 +43,6 @@ public class Stun : MonoBehaviour
     {
         mouvement.OnDisable();
         isStunned = true;
-        Debug.Log("Touché !");
-        //Début Animation Stun
+        animator.SetBool("TombeDuSol", true);
     }
 }
