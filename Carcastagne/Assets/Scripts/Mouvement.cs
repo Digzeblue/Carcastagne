@@ -7,7 +7,6 @@ public class Mouvement : MonoBehaviour
 {
     public float hauteurSaut = 5;
     public float vitesse = 10;
-    PlayerControls control;
     Rigidbody2D rb;
     public Vector2 move;
 
@@ -23,7 +22,6 @@ public class Mouvement : MonoBehaviour
     
     private void Awake()
     {
-        control = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         var index = playerInput.playerIndex;
@@ -88,11 +86,11 @@ public class Mouvement : MonoBehaviour
 
     public void OnEnable()
     {
-        control.Gameplay.Enable();
+        playerInput.enabled(true);
     }
 
     public void OnDisable()
     {
-        control.Gameplay.Disable();
+
     }
 }
