@@ -11,7 +11,10 @@ public class Chope : MonoBehaviour
     public float rangeAttaque = 0.5f;
 
     public LayerMask cochonCalque;
-    
+
+    public float cooldown;
+    private float nextGrab;
+
     public void FaireUneChope()
     {
         //Joue l'animation de chope
@@ -19,7 +22,18 @@ public class Chope : MonoBehaviour
 
         //Detectes le cochon dans la range
         Collider2D[] EnnemiAttrapé = Physics2D.OverlapCircleAll(attackPoint.position, rangeAttaque, cochonCalque);
-
+        if(EnnemiAttrapé != null && Time.time > nextGrab)
+        {
+            nextGrab = Time.time + cooldown;
+            foreach (Collider2D pig in EnnemiAttrapé)
+            {
+                //Animation jeter
+                pig.GetComponent<Projeter>().Jeter();
+            }
+        }else
+        {
+            animator.SetBool("Chope", false);
+        }
 
         
 
