@@ -7,7 +7,6 @@ public class Mouvement : MonoBehaviour
 {
     public float hauteurSaut = 5;
     public float vitesse = 10;
-    PlayerControls control;
     Rigidbody2D rb;
     public Vector2 move;
 
@@ -18,12 +17,10 @@ public class Mouvement : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoving = false;
     public bool isLookingLeft = false;
-    private bool changeDirection = false;
     public int actualDirection = 1;
     
     private void Awake()
     {
-        control = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         var index = playerInput.playerIndex;
@@ -53,11 +50,7 @@ public class Mouvement : MonoBehaviour
     {
         if(move.x * actualDirection < 0)
         {
-            changeDirection = true;
             actualDirection *= -1;
-        } else
-        {
-            changeDirection = false;
         }
         if (animator != null)
         {
@@ -88,11 +81,11 @@ public class Mouvement : MonoBehaviour
 
     public void OnEnable()
     {
-        control.Gameplay.Enable();
+        playerInput.enabled = true;
     }
 
     public void OnDisable()
     {
-        control.Gameplay.Disable();
+        playerInput.enabled = false;
     }
 }

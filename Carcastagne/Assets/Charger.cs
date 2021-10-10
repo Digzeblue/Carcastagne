@@ -7,6 +7,7 @@ public class Charger : MonoBehaviour
     private int direction;
     private Mouvement mouvement;
 
+    public Animator animator;
     private Rigidbody2D rb;
     public float dashSpeed;
     public float startDashTime;
@@ -34,6 +35,7 @@ public class Charger : MonoBehaviour
                 dashTime = startDashTime;
                 rb.velocity = Vector2.zero;
                 isCharging = false;
+                //Fin Animation charge
             } else
             {
                 dashTime -= Time.deltaTime;
@@ -52,7 +54,7 @@ public class Charger : MonoBehaviour
     {
         if(collision.gameObject.tag == "Carcasse" && isCharging)
         {
-            collision.gameObject.GetComponent<Stun>().Stunned(collision.gameObject.GetComponent<Rigidbody2D>());
+            collision.gameObject.GetComponent<Stun>().Stunned();
         }
     }
 
@@ -64,6 +66,7 @@ public class Charger : MonoBehaviour
             direction = mouvement.actualDirection;
             nextDash = Time.time + cooldown;
             //Animation charge
+            animator.SetTrigger("EnTrainDeCharger");
         }   
     }
 }

@@ -207,6 +207,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &28075358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28075350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317e79b0413c3be4f9cbe659910c5bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dureeStun: 1
 --- !u!1 &77009008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2087,7 @@ PrefabInstance:
       objectReference: {fileID: 1733366809}
     - target: {fileID: 6086938616905419995, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: hauteurSaut
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6086938616905419995, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: playerIndex
@@ -2155,6 +2168,34 @@ PrefabInstance:
     - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
       propertyPath: m_DefaultControlScheme
       value: Manette 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1733366817}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Charge
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Charger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7398037245468342653, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da915ef47e92d4447b7fbb67a90174ad, type: 3}
@@ -2293,6 +2334,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a144705c37a2a734eb7e5829e4bfdc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1733366817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733366808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bd3108673b4d0408c4eaf7dc03e802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1733366809}
+  dashSpeed: 10
+  startDashTime: 0.2
+  cooldown: 1
 --- !u!1001 &1782476584
 PrefabInstance:
   m_ObjectHideFlags: 0

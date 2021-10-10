@@ -9,11 +9,13 @@ public class Stun : MonoBehaviour
     private bool isStunned = false;
 
     private Mouvement mouvement;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         mouvement = GetComponent<Mouvement>();
+        rb = GetComponent<Rigidbody2D>();
         stunTime = dureeStun;
     }
 
@@ -22,7 +24,7 @@ public class Stun : MonoBehaviour
     {
         if(isStunned)
         {
-            if(dureeStun <= 0)
+            if(stunTime <= 0)
             {
                 mouvement.OnEnable();
                 stunTime = dureeStun;
@@ -31,16 +33,15 @@ public class Stun : MonoBehaviour
                 //fin animation stun
             } else
             {
+                rb.velocity = Vector3.zero;
                 stunTime -= Time.deltaTime;
             }
         }
     }
 
-    public void Stunned(Rigidbody2D rb)
+    public void Stunned()
     {
         mouvement.OnDisable();
-        //rb.constraints.
-
         isStunned = true;
         Debug.Log("Touché !");
         //Début Animation Stun
