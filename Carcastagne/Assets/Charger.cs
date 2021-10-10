@@ -36,6 +36,7 @@ public class Charger : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 isCharging = false;
                 //Fin Animation charge
+                animator.SetBool("EnTrainDeCharger", false);
             } else
             {
                 dashTime -= Time.deltaTime;
@@ -66,7 +67,7 @@ public class Charger : MonoBehaviour
             direction = mouvement.actualDirection;
             nextDash = Time.time + cooldown;
             //Animation charge
-            animator.SetTrigger("EnTrainDeCharger");
+            animator.SetBool("EnTrainDeCharger", true);
         }   
     }
 }
