@@ -18,6 +18,8 @@ public class Mouvement : MonoBehaviour
     public bool isGrounded = false;
     public bool isMoving = false;
     public bool isLookingLeft = false;
+    public bool changeDirection = false;
+    public int actualDirection = 1;
     
     private void Awake()
     {
@@ -25,6 +27,7 @@ public class Mouvement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         var index = playerInput.playerIndex;
+
     }
 
     void Jump(InputAction.CallbackContext ctx)
@@ -44,14 +47,25 @@ public class Mouvement : MonoBehaviour
     {
         Vector2 m = new Vector2(move.x, 0);
         transform.Translate(m);
-        if(animator != null)
+    }
+
+    private void Update()
+    {
+        if(move.x * actualDirection < 0)
+        {
+            changeDirection = true;
+            actualDirection *= -1;
+        } else
+        {
+            changeDirection = false;
+        }
+        if (animator != null)
         {
             isMoving = !(move == new Vector2(0, 0));
             animator.SetBool("MarcheActuellement", isMoving);
             isLookingLeft = (move.x < 0);
             animator.SetBool("RegardeVersVictoire", isLookingLeft);
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
