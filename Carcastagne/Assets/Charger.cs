@@ -7,6 +7,7 @@ public class Charger : MonoBehaviour
     private int direction;
     private Mouvement mouvement;
 
+    public Animator animator;
     private Rigidbody2D rb;
     public float dashSpeed;
     public float startDashTime;
@@ -65,7 +66,7 @@ public class Charger : MonoBehaviour
             direction = mouvement.actualDirection;
             nextDash = Time.time + cooldown;
             //Animation charge
-
+            animator.SetTrigger("EnTrainDeCharger");
         }   
     }
 }
