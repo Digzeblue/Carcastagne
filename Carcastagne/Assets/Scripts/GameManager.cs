@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Transform posCam2;
     public float speedCam;
 
+    
+
     //Respawn Joueur
     
     

@@ -12,7 +12,7 @@ public class Trigger1 : MonoBehaviour
     public Transform targetLocationQueen;
    
 
-    float speedCam = 50f;
+    
 
     void Start()
     {
