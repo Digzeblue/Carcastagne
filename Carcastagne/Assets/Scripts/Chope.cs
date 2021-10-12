@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chope : MonoBehaviour
 {
     public Animator animator;
+    public bool isGrabing = false;
 
     public Transform attackPoint;
 
@@ -24,6 +25,7 @@ public class Chope : MonoBehaviour
         Collider2D[] EnnemiAttrapé = Physics2D.OverlapCircleAll(attackPoint.position, rangeAttaque, cochonCalque);
         if(EnnemiAttrapé != null && Time.time > nextGrab)
         {
+            isGrabing = true;
             nextGrab = Time.time + cooldown;
             foreach (Collider2D pig in EnnemiAttrapé)
             {
@@ -33,6 +35,7 @@ public class Chope : MonoBehaviour
         }else
         {
             animator.SetBool("Chope", false);
+            isGrabing = false;
         }
 
         

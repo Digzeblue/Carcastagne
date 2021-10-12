@@ -35,6 +35,7 @@ public class Projeter : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground" && isThrowed == true)
         {
+            //Atteint le sol
             pigControl.OnEnable();
         }
     }
@@ -45,7 +46,7 @@ public class Projeter : MonoBehaviour
 
         Souleve();
 
-        StartCoroutine(waiter());   //Attendre
+        StartCoroutine("waiter");   //Attendre
 
         isGrabed = false;
         isThrowed = true;
@@ -67,6 +68,6 @@ public class Projeter : MonoBehaviour
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(liftDuree);
     }
 }

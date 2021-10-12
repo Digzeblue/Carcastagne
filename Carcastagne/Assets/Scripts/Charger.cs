@@ -55,7 +55,14 @@ public class Charger : MonoBehaviour
     {
         if(collision.gameObject.tag == "Carcasse" && isCharging)
         {
-            collision.gameObject.GetComponent<Stun>().Stunned();
+            //rentre dans Carcas
+
+            //Priorité à la chope sur la charge
+            if (!collision.gameObject.GetComponent<Chope>().isGrabing)
+            {
+                collision.gameObject.GetComponent<Stun>().Stunned();
+            }
+            
         }
     }
 
